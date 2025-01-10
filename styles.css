@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset untuk konsistensi */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,13 +7,13 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #e0e0e0;
+    background: linear-gradient(180deg, #f4f7fa, #e8eff7);
     color: #333;
     line-height: 1.6;
     margin: 0;
 }
 
-/* Link */
+/* Link Global */
 a {
     text-decoration: none;
     color: inherit;
@@ -24,83 +24,99 @@ header {
     background: linear-gradient(135deg, #1e90ff, #0073e6);
     color: white;
     text-align: center;
-    padding: 60px 20px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    transform: translateZ(5px);
+    padding: 40px 20px;
+    border-bottom: 5px solid #005bb5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 header p {
     font-size: 1.2em;
+    margin-bottom: 20px;
 }
 
 .cta-button {
-    background: linear-gradient(145deg, #28a745, #218838);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #28a745;
     color: white;
     padding: 12px 30px;
-    font-size: 1.2em;
-    border-radius: 30px;
-    transition: transform 0.3s ease;
+    font-size: 1.1em;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
+    background-color: #218838;
+    transform: scale(1.05);
 }
 
 /* Produk */
 #products {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 40px 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 50px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .product-card {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15), -5px -5px 20px rgba(255, 255, 255, 0.7);
-    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
     text-align: center;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    transform: perspective(800px) rotateX(1deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-    transform: perspective(800px) rotateX(-5deg) translateY(-10px);
-    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3), -10px -10px 25px rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .product-card h3 {
-    font-size: 1.8em;
+    font-size: 1.9em;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+}
+
+.product-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
 }
 
 .product-card ul li {
     font-size: 1.1em;
     margin-bottom: 10px;
+    color: #555;
 }
 
 .product-card p {
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-weight: bold;
     color: #28a745;
 }
 
 .order-button {
-    background: linear-gradient(145deg, #1e90ff, #0073e6);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #1e90ff, #0073e6);
     color: white;
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: transform 0.3s ease;
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 
 .order-button:hover {
-    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(135deg, #0073e6, #005bb5);
+    transform: scale(1.08);
 }
 
 /* Footer */
@@ -108,13 +124,51 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 15px 0;
+    padding: 15px 20px;
+}
+
+footer a {
+    color: #28a745;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 /* Responsiveness */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2.5em;
+        font-size: 2em;
     }
+
+    header p {
+        font-size: 1em;
     }
+
+    .cta-button {
+        font-size: 1em;
+        padding: 10px 25px;
+    }
+
+    .product-card {
+        padding: 20px;
+    }
+
+    .product-card h3 {
+        font-size: 1.5em;
+    }
+
+    .product-card ul li {
+        font-size: 1em;
+    }
+
+    .product-card p {
+        font-size: 1.2em;
+    }
+
+    .order-button {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+        }
     
